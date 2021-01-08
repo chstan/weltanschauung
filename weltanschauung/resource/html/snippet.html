@@ -1,0 +1,49 @@
+<div>
+    <style type="text/css" scoped>
+        input[type='checkbox'] {
+            display: none;
+        }
+        
+        .header {
+            display: inline-block;
+        }
+        
+        .label-toggle {
+            display: inline-block;
+            text-align: center;
+            padding: 0.2rem;
+            cursor: pointer;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 2px;
+        }
+        
+        .collapsible-content {
+            max-height: 0px;
+            overflow: hidden;
+        }
+        
+        .toggle:checked+.label-toggle+.collapsible-content {
+            max-height: 350px;
+        }
+        
+        .collapsible-content .content-inner {
+            background: rgba(0, 105, 255, .2);
+            padding: .5rem 1rem;
+        }
+        
+        .collapsible-content p {
+            margin-bottom: 0;
+        }
+        
+    </style>
+    <div class="wrap-collapsible">
+        <header class="header">
+            {{header}}
+        </header>
+        <input id="collapsible" class="toggle" type="checkbox">
+        <label for="collapsible" class="label-toggle">{{label}}</label>
+        <div class="collapsible-content">
+            {{content}}
+        </div>
+    </div>
+</div>
