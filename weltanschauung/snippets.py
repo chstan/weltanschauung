@@ -1,21 +1,10 @@
 from pathlib import Path
-from jinja2 import Template
+from weltanschauung.utils import read_template, read_resource
 
 __all__ = [
     "SNIPPETS",
     "append_snippet",
 ]
-
-_RESOURCE_DIR = Path(__file__).resolve().parent / "resource"
-
-
-def read_resource(p: Path) -> str:
-    with open(str(_RESOURCE_DIR / p), "r") as f:
-        return f.read()
-
-
-def read_template(p: Path) -> Template:
-    return Template(read_resource(p))
 
 
 class FileSnippet:
@@ -30,9 +19,7 @@ class FileSnippet:
 
         return template.render(
             header=str(self),
-            content="<pre>{}</pre>".format(
-                read_resource(Path("snippets") / self.filename)
-            ),
+            content="<pre>{}</pre>".format(read_resource(Path("snippets") / self.filename)),
             label="Show",
         )
 

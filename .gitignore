@@ -1,4 +1,5 @@
 conrad-tools.code-workspace
+.vscode
 
 *.egg
 *.egg/

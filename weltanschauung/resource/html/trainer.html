@@ -1,0 +1,14 @@
+{% extends "html/jupyter_repr.html" %}
+{% block content %}
+<p>weltanschauung.torch.trainer.Trainer</p>
+<div class="flex flex-row">
+    <div>
+        <header>General Trainer Info</header>
+        {{ common.dict_to_table(table_data) }}
+    </div>
+    <div>
+        <header>.logger</header>
+        {{ logger|safe }}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% macro dict_to_table(table) %}
+<table class="table-auto">
+    <tbody>
+        {% for key, value in table.items() %}
+        <tr class="{{'bg-gray-100' if (loop.index0 % 2 == 0) else 'bg-white'}}">
+            <th>{{ key }}</th>
+            <td>{{ value }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endmacro %}

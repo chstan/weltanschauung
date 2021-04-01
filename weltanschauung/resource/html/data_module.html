@@ -1,0 +1,8 @@
+{% extends "html/jupyter_repr.html" %}
+{% block content %}
+<p>weltanschauung.torch.datamodules.LightningDataModule</p>
+<header><strong class="font-bold">{{dm.name}}</strong></header>
+<div class="flex flex-row">
+    {{ common.dict_to_table(table_data) }}
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% import "macros/common.html" as common %}
+<div class="jupyter-repr">
+    {% block styles %}
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <style type="text/css" scoped>
+        {% include 'css/doc.css' %}
+    </style>
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
+</div>
